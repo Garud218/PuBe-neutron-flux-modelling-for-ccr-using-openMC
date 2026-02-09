@@ -44,7 +44,6 @@ Applications include neutron source characterization, preliminary shielding stud
 |----------------------------|-------------------------------------------------------------------------|
 | `pube_geom.py`             | Defines geometry, materials, PuBe source, tallies, simulation settings |
 | `analyze_results.py`       | Reads `statepoint.h5`, extracts tallies, creates plots & tables        |
-| `materials.py`             | (optional) Helper file for material definitions                        |
 | `results/`                 | Output folder: plots (.png), CSV data, text summaries                  |
 | `images/`                  | Setup diagrams, example flux plots, spectrum comparisons               |
 
