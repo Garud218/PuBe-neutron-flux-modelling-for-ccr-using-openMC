@@ -18,7 +18,7 @@ Applications include neutron source characterization, preliminary shielding stud
 ### Geometry Overview
 - **PuBe neutron source**: Simplified cylindrical shape source with radius: 0.5 cm and height: 2.4 cm 
 - **Activity**: Activity of our PuBe source is 0.5 Ci  
-- **Detector configuration**: Our detector consisted of 1.5 mm^2 CR-39 (front surface area of 4.8 mm^2) coated/wrapped with 20 μm polyethene, which is coated/wrapped with 42 μm of polypropylene sheet as shown in the figure below. 
+- **Detector configuration**: Our detector consisted of 1.5 mm^2 CR-39 (front surface area of 4.8 mm^2) coated/wrapped with 20 μm polyethylene, which is coated/wrapped with 42 μm of polypropylene sheet as shown in the figure below. 
 - **Detector position**: CCR detector is placed at 5.5 cm from the source coaxial axis or 5 cm from the source surface
 - **Medium**: Air medium is assumed 
 - **Coordinate system**: Cylindrical (r, φ, z) symmetry often exploited
