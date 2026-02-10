@@ -1,26 +1,26 @@
-# PuBe Neutron Flux Modelling for Compact Cylindrical Reactor (CCR) Using OpenMC
+# PuBe Neutron Flux Modelling for uncoated control CR-39 (CCR) Using OpenMC
 
-This repository contains a complete, reproducible OpenMC simulation workflow to model neutron flux from a **Plutonium-Beryllium (PuBe)** neutron source placed inside a simplified **Compact Cylindrical Reactor (CCR)** geometry.
+This repository contains a complete, reproducible OpenMC simulation workflow to model neutron flux from a **Plutonium-Beryllium (PuBe)** neutron source on a **uncoated control CR-39 (CCR)** detector.
 
 ## Objective
 
 The primary goals of this project are:
 
-- Realistic modeling of neutron emission from a PuBe source using a standard energy spectrum  
+- Realistic modelling of neutron emission from a PuBe source using a standard energy spectrum  
 - Simulation of neutron transport, scattering, absorption and moderation inside a compact cylindrical geometry  
 - Calculation and visualization of neutron flux (both spatial distribution and energy spectrum)  
-- Providing an educational / research-oriented example of neutron Monte Carlo modeling with OpenMC  
+- Providing an educational / research-oriented example of neutron Monte Carlo modelling with OpenMC  
 
 Applications include neutron source characterization, preliminary shielding studies, detector response estimation, and nuclear engineering education.
 
 ## Setup Description
 
 ### Geometry Overview
-- **Core vessel**: Simplified cylindrical shape (example: radius 10–15 cm, height 20–30 cm)  
-- **Wall material**: Stainless steel, aluminum, or equivalent (thin wall approximation possible)  
-- **Moderator / reflector**: Water, polyethylene, heavy water, graphite, or combination (configurable)  
-- **Source position**: PuBe source placed at the geometric center (coaxial)  
-- **Boundary conditions**: Reflective on outer surfaces or void (vacuum) — configurable in `pube_geom.py`  
+- **PuBe neutron source**: Simplified cylindrical shape source with radius: 0.5 cm and height: 2.4 cm 
+- **Activity**: Activity of our PuBe source is 0.5 Ci  
+- **Detector configuration**: Our detector consisted of 1.5 mm^2 CR-39 (front surface area of 4.8 mm^2) coated/wrapped with 20 μm polyethene, which is coated/wrapped with 42 μm of polypropylene sheet as shown in the figure below. 
+- **Detector position**: CCR detector is placed at 5.5 cm from the source coaxial axis or 5 cm from the source surface
+- **Medium**: Air medium is assumed 
 - **Coordinate system**: Cylindrical (r, φ, z) symmetry often exploited
   
 ![Experimental setup](https://github.com/Garud218/PuBe-neutron-flux-modelling-for-ccr-using-openMC/blob/main/setup/exp_setup.png)
@@ -28,15 +28,13 @@ Applications include neutron source characterization, preliminary shielding stud
 ### Neutron Source – PuBe
 - Reaction types: (α,n) on ⁹Be + spontaneous fission of ²³⁹Pu  
 - Average neutron energy: ≈ 4.5 MeV  
-- Spectrum: Broad continuous distribution (peak ~1–5 MeV, tail extending to ~11 MeV)  
+- Spectrum: PuBe energy spectrum from ISO 8529-1 (experimental data)  (peak ~1–5 MeV, tail extending to ~11 MeV)  
 - Emission: Approximately isotropic  
-- Spatial distribution: modeled as point source or small cylindrical volume (configurable)
+- Spatial distribution: modelled as a cylindrical volume with radius: 0.5 cm and height: 2.4 cm
+- Activity: Activity of our PuBe source is 0.5 Ci  
 
-### Detectors / Tallies
-- Energy-dependent flux tallies (typically 50–200 bins from thermal to fast)  
-- Spatial mesh tallies (2D radial-axial or 3D Cartesian)  
-- Cell flux tallies at selected locations (e.g. 5 cm, 10 cm, 15 cm from center)  
-- Optional: reaction rate tallies (absorption, capture, fission, etc.)
+### Energy dependent flux tallies
+- Energy-dependent neutron flux was tallied in four energy groups: thermal (< 0.025 eV), epithermal (0.025–0.5 eV), intermediate (0.5 eV–100 keV), and fast (> 100 keV).
 
 ## Repository Contents
 
